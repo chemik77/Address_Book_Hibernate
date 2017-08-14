@@ -6,14 +6,19 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import pl.chemik77.domain.Address;
-import pl.chemik77.domain.Contact;
-import pl.chemik77.domain.Person;
+import pl.chemik77.model.Address;
+import pl.chemik77.model.Contact;
+import pl.chemik77.model.Person;
 
 public class Main {
 
 	public static void main(String[] args) {
 
+		addPerson();
+
+	}
+
+	private static void addPerson() {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
@@ -33,7 +38,6 @@ public class Main {
 
 		entityManager.close();
 		entityManagerFactory.close();
-
 	}
 
 }
