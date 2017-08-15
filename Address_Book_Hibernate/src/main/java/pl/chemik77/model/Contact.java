@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Contact implements Serializable {
+public class Contact implements BaseModel, Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
