@@ -1,0 +1,27 @@
+.header {
+	float: left;
+	background-color: #ffe6e6;
+	width: 100.0%;
+	height: 100.0px;
+}
+
+.list {
+	float: left;
+	background-color: #e6ffff;
+	width: 50.0%;
+	height: 400.0px;
+}
+
+.details {
+	float: right;
+	background-color: #e6ffe6;
+	width: 50.0%;
+	height: 400.0px;
+}
+
+.footer {
+	float: left;
+	background-color: #fff2e6;
+	width: 100.0%;
+	height: 100.0px;
+}

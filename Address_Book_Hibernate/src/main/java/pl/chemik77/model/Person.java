@@ -87,7 +87,7 @@ public class Person implements BaseModel, Serializable {
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return lastName + ", " + firstName;
 	}
 
 }

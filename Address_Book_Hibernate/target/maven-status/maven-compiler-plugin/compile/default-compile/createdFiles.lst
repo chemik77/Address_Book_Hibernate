@@ -1,0 +1,7 @@
+pl\chemik77\model\Person.class
+pl\chemik77\model\Address.class
+pl\chemik77\model\BaseModel.class
+pl\chemik77\model\Contact.class
+pl\chemik77\database\dao\CommonDao.class
+pl\chemik77\utils\EMFProvider.class
+pl\chemik77\Main.class
