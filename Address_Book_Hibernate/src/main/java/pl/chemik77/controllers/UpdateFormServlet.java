@@ -15,8 +15,8 @@ import pl.chemik77.model.Address;
 import pl.chemik77.model.Contact;
 import pl.chemik77.model.Person;
 
-@WebServlet("/showDetails")
-public class ShowDetailsServlet extends HttpServlet {
+@WebServlet("/update")
+public class UpdateFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -27,16 +27,18 @@ public class ShowDetailsServlet extends HttpServlet {
 		Service service = new Service();
 		List<Person> persons = service.getPersonsList();
 		Person person = service.getRecord(Person.class, id);
+		Contact contact = service.getRecord(Contact.class, person.getContact().getId());
 		Address address = service.getRecord(Address.class, person.getAddress().getId());
-		Contact contact = service.getRecord(Contact.class, person.getAddress().getId());
 
 		request.setAttribute("persons", persons);
-		request.setAttribute("address", address);
+		request.setAttribute("person", person);
 		request.setAttribute("contact", contact);
+		request.setAttribute("address", address);
 
-		String jsp = "/index.jsp";
+		String jsp = "/updateForm.jsp";
 		RequestDispatcher rd = getServletContext().getRequestDispatcher(jsp);
 		rd.forward(request, response);
+
 	}
 
 }

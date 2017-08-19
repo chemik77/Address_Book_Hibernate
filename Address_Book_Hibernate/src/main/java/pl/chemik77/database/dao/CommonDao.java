@@ -39,7 +39,7 @@ public class CommonDao {
 	}
 
 	public void refresh(BaseModel baseModel) {
-		this.entityManager.refresh(baseModel);
+		this.entityManager.persist(this.entityManager.merge(baseModel));
 	}
 
 	public <T> void deleteById(Class<T> cls, int id) {
