@@ -14,60 +14,74 @@
 			<h1>Address Book</h1>
 		</div>
 		<div class="list">
-			<h1>All Contacts</h1>
-			<a href="add">Add</a> <br /> <br />
-			<c:forEach items="${requestScope.persons}" var="persons">
-				<a href="showDetails?id=<c:out value="${persons.id }"></c:out>"><c:out
-						value="${persons}"></c:out></a>
-				<br />
-			</c:forEach>
+			<div class="headerList1">
+				<h1>Contact list</h1>
+			</div>
+			<div class="headerList2">
+				<a href="add" class="button">Add</a>
+			</div>
 
+			<div class="innerList">
+				<br />
+				<c:forEach items="${requestScope.persons}" var="persons">
+					<ul>
+						<li><a
+							href="showDetails?id=<c:out value="${persons.id }"></c:out>"
+							class="nameList"><c:out value="${persons}"></c:out></a> <br /></li>
+					</ul>
+				</c:forEach>
+			</div>
 		</div>
 		<div class="details">
-			<h1>Add person:</h1>
-			<form name=addForm action=addPerson method=get>
-				<table border="0">
-					<tr>
-						<td>First name</td>
-						<td><input type="text" name="firstName"></td>
-					</tr>
-					<tr>
-						<td>Last name</td>
-						<td><input type="text" name="lastName"></td>
-					</tr>
-					<tr>
-						<td>Birth date</td>
-						<td><input type="text" name="birth" value="YYYY-MM-DD"></td>
-					</tr>
-					<tr>
-						<td>Email</td>
-						<td><input type="text" name="email"></td>
-						<td>Phone</td>
-						<td><input type="text" name="phone"></td>
-					</tr>
-					<tr>
-						<td>Street</td>
-						<td><input type="text" name="street"></td>
-						<td>House no</td>
-						<td><input type="text" name="houseNo"></td>
-					</tr>
-					<tr>
-						<td>Zip code</td>
-						<td><input type="text" name="zipCode"></td>
-						<td>City</td>
-						<td><input type="text" name="city"></td>
-					</tr>
-					<tr>
-					<td><a href="read">Back</a></td>
-						<td><input type="submit" name="submit" value="Add">
-						<td>
-					</tr>
-				</table>
-			</form>
+			<div class="headerDetails">
+				<h1>Add person:</h1>
+			</div>
+			<div class="innerDetails">
+				<form name=addForm action=addPerson method=get>
+					<table border="0">
+						<tr>
+							<td>First name</td>
+							<td><input type="text" name="firstName"></td>
+						</tr>
+						<tr>
+							<td>Last name</td>
+							<td><input type="text" name="lastName"></td>
+						</tr>
+						<tr>
+							<td>Birth date</td>
+							<td><input type="text" name="birth" value="YYYY-MM-DD"></td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td><input type="text" name="email"></td>
+							<td>Phone</td>
+							<td><input type="text" name="phone"></td>
+						</tr>
+						<tr>
+							<td>Street</td>
+							<td><input type="text" name="street"></td>
+							<td>House no</td>
+							<td><input type="text" name="houseNo"></td>
+						</tr>
+						<tr>
+							<td>Zip code</td>
+							<td><input type="text" name="zipCode"></td>
+							<td>City</td>
+							<td><input type="text" name="city"></td>
+						</tr>
+						<tr>
+							<td><br /></td>
+						</tr>
+						<tr>
+							<td><a href="read" class="button">Back</a>  <input
+								type="submit" name="submit" value="Add" class="submit">
+							<td>
+						</tr>
+					</table>
+				</form>
+			</div>
 		</div>
-		<div class="footer">
-			<p>Footer</p>
-		</div>
+		<div class="footer"></div>
 	</div>
 </body>
 </html>

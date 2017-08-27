@@ -12,49 +12,62 @@
 	<div class="container">
 		<div class="header">
 			<h1>Address Book</h1>
+
 		</div>
 		<div class="list">
-			<h1>All Contacts</h1>
-			<a href="add">Add</a> <br /> <br />
-			<c:forEach items="${requestScope.persons}" var="persons">
-				<a href="showDetails?id=<c:out value="${persons.id }"></c:out>"><c:out
-						value="${persons}"></c:out></a>
-				<br />
-			</c:forEach>
+			<div class="headerList1">
+				<h1>Contact list</h1>
+			</div>
+			<div class="headerList2">
+				<a href="add" class="button">Add</a>
+			</div>
 
+			<div class="innerList">
+				<br />
+				<c:forEach items="${requestScope.persons}" var="persons">
+					<ul>
+						<li><a
+							href="showDetails?id=<c:out value="${persons.id }"></c:out>"
+							class="nameList"><c:out value="${persons}"></c:out></a> <br /></li>
+					</ul>
+				</c:forEach>
+			</div>
 		</div>
 		<div class="details">
-			<h1>Details for:</h1>
-			<c:if test="${requestScope.contact ne null }">
-				<c:out value="${requestScope.contact.person }"></c:out>
-				<br />
-				<br />
-				<c:out value="${requestScope.contact.email }"></c:out>
-				<br />
-				<c:out value="${requestScope.contact.phone }"></c:out>
-				<br />
-				<br />
-				<p>Address:</p>
-				<c:out value="${requestScope.address.street }"></c:out>
-				<c:out value="${requestScope.address.houseNo }"></c:out>
-				<br />
-				<c:out value="${requestScope.address.zipCode }"></c:out>
-				<c:out value="${requestScope.address.city }"></c:out>
-				<br />
-				<br />
-				<br />
+			<div class="headerDetails">
+				<h1>Details for:</h1>
+			</div>
+			<div class="innerDetails">
+				<c:if test="${requestScope.contact ne null }">
+					<div class="name">
+						<c:out value="${requestScope.contact.person }"></c:out>
+					</div>
+					<br />
+					<c:out value="${requestScope.contact.email }"></c:out>
+					<br />
+					<c:out value="${requestScope.contact.phone }"></c:out>
+					<br />
+					<p>Address:</p>
+					<c:out value="${requestScope.address.street }"></c:out>
+					<c:out value="${requestScope.address.houseNo }"></c:out>
+					<br />
+					<c:out value="${requestScope.address.zipCode }"></c:out>
+					<c:out value="${requestScope.address.city }"></c:out>
+					<br />
+					<br />
+					<br />
+					<a
+						href="update?id=<c:out value="${requestScope.contact.person.id }"></c:out>"
+						class="button">Edit</a>
+					<a
+						href="delete?id=<c:out value="${requestScope.contact.person.id }"></c:out>"
+						class="button">Delete</a>
+				</c:if>
 
-				<a
-					href="update?id=<c:out value="${requestScope.contact.person.id }"></c:out>">Edit</a>
-				<a
-					href="delete?id=<c:out value="${requestScope.contact.person.id }"></c:out>">Delete</a>
-			</c:if>
-
+			</div>
 
 		</div>
-		<div class="footer">
-			<p>Footer</p>
-		</div>
+		<div class="footer"></div>
 	</div>
 </body>
 </html>

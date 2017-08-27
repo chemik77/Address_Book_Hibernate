@@ -22,6 +22,7 @@ public class Service {
 		dao.beginTransaction();
 		List<Person> allRecords = dao.getAllRecords(Person.class);
 		dao.closeTransaction();
+		allRecords.sort(new ComparatorC());
 		return allRecords;
 	}
 
@@ -94,4 +95,6 @@ public class Service {
 		dao.refresh(address);
 		dao.closeTransaction();
 	}
+
 }
+
